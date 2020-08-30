@@ -63,6 +63,15 @@ header {
   align-items: center;
 }
 
+.character-amount-container {
+  display: flex;
+  align-items: center;
+}
+
+.number-input {
+  width: 2.5rem;
+}
+
 .card-footer {
   text-align: center;
 }
