@@ -54,24 +54,6 @@ header {
   min-height: 100px;
 }
 
-.form {
-  display: grid;
-  grid-template-columns: auto auto;
-  row-gap: 1rem;
-  column-gap: 3rem;
-  justify-content: center;
-  align-items: center;
-}
-
-.character-amount-container {
-  display: flex;
-  align-items: center;
-}
-
-.number-input {
-  width: 2.5rem;
-}
-
 .card-footer {
   text-align: center;
 }
@@ -115,7 +97,7 @@ button[disabled] {
   float: right;
 }
 
-#passwordDisplay {
+#password {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
