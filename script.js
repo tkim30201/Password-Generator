@@ -28,10 +28,45 @@ var charArray = {
     return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
   },
   symbolChar: function() {
-    return specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
+    return symbols[Math.floor(Math.random() * symbols.length)]
   }
 }
+const symbols = "!@#$%^&*()";
 
+var minAmount = 0;
+var minUpper = "";
+var minLower = "";
+var minNumber = "";
+var minSymbol = "";
+
+if (includeUpper === true) {
+  minUpper = charArray.upperChar();
+  minAmount++;
+}
+if (includeLower === true) {
+  minLower = charArray.lowerChar();
+  minAmount++;
+}
+if (includeNumbers === true) {
+  minNumber = charArray.numberChar();
+  minAmount++;
+}
+if (includeSymbols === true) {
+  minSymbol = charArray.symbolChar();
+  minAmount++;
+}
+var randomGen = "";
+for (let i = 0; i < (parseInt(characterAmount) - minAmount); i++) {
+  var randomNumber = Math.floor(math.random() * 4);
+  randomGen += randomNumber;
+}
+
+randomGen += minUpper;
+randomGen += minLower;
+randomGen += minNumber;
+randomGen += minSymbol;
+
+return randomGen;
 }
 
 // Add event listener to generate button
