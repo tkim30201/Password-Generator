@@ -17,25 +17,21 @@ function generatePassword() {
   var includeNumbers = confirm("Would you like to include numbers?")
   var includeSymbols = confirm("Would you like to include symbols?")
 
-  if (includeUpper) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES)
-  if (includeLower) charCodes = charCodes.concat(LOWERCASE_CHAR_CODES)
-  if (includeSymbols) charCodes = charCodes.concat(SYMBOL_CHAR_CODES)
-  if (includeNumbers) charCodes = charCodes.concat(NUMBER_CHAR_CODES)
-
-  const passwordCharacters = []
-  for (let i = 0; i < characterAmount; i++) {
-    const characterCode = charCodes[Math.floor(Math.random() * charCodes.length)]
-    passwordCharacters.push(String.fromCharCode(characterCode))
+var charArray = {
+  lowerChar: function() {
+    return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
+  },
+  upperChar: function() {
+    return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
+  },
+  numberChar: function() {
+    return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
+  },
+  symbolChar: function() {
+    return specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
   }
-  return passwordCharacters.join('')
 }
 
-function arrayFromLowToHigh(low, high) {
-  const array = []
-  for (let i = low; i <= high; i++) {
-    array.push(i)
-  }
-  return array
 }
 
 // Add event listener to generate button
